@@ -195,3 +195,7 @@ autocmd BufRead,BufNewFile *.feature set sw=4 sts=4 et
 
 set number
 set numberwidth=5
+
+if has("gui_macvim")
+  set guifont=Menlo\ Regular:h16
+endif
