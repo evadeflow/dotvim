@@ -25,15 +25,12 @@ set smartcase
 " Keep more context when scrolling off the end of a buffer
 set scrolloff=3
 
-" Store temporary files in a central spot
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/tmp,/var/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/tmp,/var/tmp
-
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" Keep a backup file
-set backup
+" Don't keep a backup or swap file
+set nobackup
+set noswapfile
 
 " Show the cursor position all the time
 set ruler
@@ -199,3 +196,13 @@ set numberwidth=5
 if has("gui_macvim")
   set guifont=Menlo\ Regular:h16
 endif
+
+" Use w!! to force writing of a file via sudo
+cmap w!! w !sudo tee % >/dev/null
+
+
+" Make window navigation easier
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
