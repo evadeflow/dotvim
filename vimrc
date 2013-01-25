@@ -91,6 +91,8 @@ if has("autocmd")
     \   exe "normal g`\"" |
     \ endif
 
+  autocmd BufReadPost fugitive://* set bufhidden=delete
+
   augroup END
 else
   set autoindent    " always set autoindenting on
