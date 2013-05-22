@@ -53,6 +53,9 @@ if &t_Co > 2 || has("gui_running")
   set guifont=DejaVu\ Sans\ Mono\ 11 
 endif
 
+" Show trailing space and leading tabs 
+set lcs=tab:˷˷,trail:▓
+
 " Set some reasonable defaults
 set expandtab
 set tabstop=4
