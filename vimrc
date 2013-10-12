@@ -96,6 +96,9 @@ if has("autocmd")
 
   autocmd BufReadPost fugitive://* set bufhidden=delete
 
+  " Auto lcd to the current file's folder
+  autocmd BufEnter * silent! lcd %:p:h
+
   augroup END
 else
   set autoindent    " always set autoindenting on
