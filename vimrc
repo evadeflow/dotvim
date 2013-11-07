@@ -50,7 +50,7 @@ if &t_Co > 2 || has("gui_running")
   syntax enable
   set background=dark
   colorscheme desert
-  set guifont=DejaVu\ Sans\ Mono\ 11 
+  set guifont=DejaVu\ Sans\ Mono\ 11
 endif
 
 " Show trailing space and leading tabs 
@@ -82,6 +82,8 @@ if has("autocmd")
 
   " For all text files set 'textwidth' to 72 characters.
   autocmd FileType text setlocal textwidth=72
+
+  autocmd FileType cmake setlocal noet sw=2 ts=2
 
   " For mail files set 'textwidth' to 72 characters.
   autocmd FileType mail setlocal textwidth=72 columns=80
@@ -214,3 +216,6 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Use ii as a synonym for ESC
+inoremap ii <Esc>
