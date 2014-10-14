@@ -194,6 +194,9 @@ autocmd BufRead,BufNewFile *.cmp set ft=cpp
 " Map ,e to open files in the same directory as the current file
 map <leader>e :e <C-R>=expand("%:h")<cr>/
 
+" Save file using sudo
+map <leader>sudo :w !sudo tee %<CR><CR>
+
 if has("python")
     run ropevim/rope.vim
 endif
