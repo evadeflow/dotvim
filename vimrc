@@ -186,6 +186,18 @@ augroup myfiletypes
   autocmd FileType python set sw=4 sts=4 et
 augroup END
 
+augroup HelpInTabs
+    autocmd!
+    autocmd! BufEnter *.txt  call HelpInNewTab()
+augroup END
+
+" Display help in new tab
+function! HelpInNewTab()
+    if &buftype == 'help'
+        execute "normal \<C-W>T"
+    endif
+endfunction
+
 set switchbuf=useopen
 
 " Treat CMP files as CPP files (for SimCreator)
@@ -196,6 +208,12 @@ map <leader>e :e <C-R>=expand("%:h")<cr>/
 
 " Save file using sudo with :w!!
 cmap w!! %!sudo tee %
+
+" Navigate search lists using arrow keys
+nmap <silent> <RIGHT>         :cnext<CR>
+nmap <silent> <RIGHT><RIGHT>  :cnfile<CR><C-G>
+nmap <silent> <LEFT>          :cprev<CR>
+nmap <silent> <LEFT><LEFT>    :cpfile<CR><C-G>
 
 if has("python")
     run ropevim/rope.vim
